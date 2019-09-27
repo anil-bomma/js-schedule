@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Schedule App</title>
+
+  <meta name="StopWatch" content="stop watch">
+  <meta name="author" content="Anil Bomma">
+
+  <!-- get current Bootstrap Material Design styles from https://mdbootstrap.com/md-bootstrap-cdn/ -->
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/css/mdb.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <!-- required for sticky footer -->
+  <style>
+    body,
+    .sticky-footer-wrapper {
+      min-height: 100vh;
+    }
+  </style>
+
+</head>
+
+<body class="d-flex flex-column sticky-footer-wrapper">
+  <!-- Bootstrap container or container-fluid (whole width) -->
+  <!-- https://getbootstrap.com/docs/4.0/layout/overview/ -->
+  <!-- margin top 5 ($spacer * 3) -->
+  <main class="container mt-5 flex-fill">
+
+    <!--Container has rows - first row -->
+    <div class="row">
+
+      <!--Rows have columns - column 1 (6/12) -->
+      <div class="col-md-6 mb-4">
+        <div class="bg-grey">
+          <h2>Stop Watch</h2>
+          <hr>
+          <label for="guest">Minutes : Seconds</label>
+          <fieldset class="mt-4">
+            <input id="min-1" type="number" min="0" max="5" value=0 class="label-align" disabled>
+            <input id="min-2" type="number" min="0" max="9" value=0 class="label-align" disabled>
+            <span>:</span>
+            <input id="sec-1" type="number" min="0" max="5" value=0 class="label-align" disabled>
+            <input id="sec-2" type="number" min="0" max="9" value=0 class="label-align" disabled>
+          </fieldset>
+
+          <fieldset class="mt-4">
+            <button id="start" class="btn btn-success" onclick="startTimer()">Start</button>
+            <button id="stop" class="btn btn-danger" onclick="stopTimer()">Stop</button>
+            <button id="reset" class="btn btn-primary" onclick="resetTimer()">Reset</button>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="bg-grey">
+          <h2>Timer</h2>
+          <hr>
+          <label for="guest">Minutes : Seconds</label>
+          <fieldset class="mt-4">
+            <input id="m1" type="number" min="0" max="5" value=0 class="label-align">
+            <input id="m2" type="number" min="0" max="9" value=0 class="label-align">
+            <span>:</span>
+            <input id="s1" type="number" min="0" max="5" value=0 class="label-align">
+            <input id="s2" type="number" min="0" max="9" value=0 class="label-align">
+          </fieldset>
+
+          <fieldset class="mt-4">
+            <button id="start" class="btn btn-success" onclick="setBackTimer()">Start</button>
+            <button id="stop" class="btn btn-info" onclick="stopBackTimer()">Pause</button>
+            <button id="reset" class="btn btn-primary" onclick="resetBackTimer()">Reset</button>
+          </fieldset>
+        </div>
+      </div>
+      <!--end column 1-->
+    </div>
+    <!-- end row 1 -->
+
+  </main>
+
+  <!-- sticky footer with padding on y-axis (top and bottom) -->
+  <footer class="footer mt-auto py-3 bg-light">
+    <div class="container">
+      <span class="text-muted">Right-click / Inspect / Console</span>
+      &#9670;
+      <a href="https://profcase.github.io/js-gui/">Demo</a>
+      &#9670;
+      <a href="https://github.com/profcase/js-gui">Source</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.7/js/mdb.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
