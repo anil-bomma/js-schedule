@@ -124,7 +124,6 @@ const setBackTimer = async () => {
 
 
     } else {
-        let totalSecond = parseInt(second);
         let timeOut = totalSecond * 1000;
 
         interval = setInterval(() => {
