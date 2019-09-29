@@ -48,6 +48,7 @@ const stopTimer = () => {
 }
 
 const resetTimer = () => {
+    timer = 0;
     sec1 = sec2 = min1 = min2 = 0;
     document.querySelector("#sec-2").value = 0;
     document.querySelector("#sec-1").value = 0;
@@ -152,6 +153,7 @@ const stopBackTimer = () => {
 }
 
 const resetBackTimer = () => {
+    interval = 0;
     s1 = s2 = m1 = m2 = 0;
     clearInterval(interval);
     document.querySelector("#s1").value = 0;
