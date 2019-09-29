@@ -121,6 +121,7 @@ const setBackTimer = async () => {
             }, 1000)
 
             setTimeout(() => {
+                interval = 0;
                 clearInterval(oneMinInterval);
                 clearInterval(interval);
                 document.querySelector("#s1").value = 0;
@@ -139,6 +140,7 @@ const setBackTimer = async () => {
             }, 1000)
 
             setTimeout(() => {
+                interval = 0;
                 clearInterval(interval);
                 document.querySelector("#s1").value = 0;
                 document.querySelector("#s2").value = 0;
