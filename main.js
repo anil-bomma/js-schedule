@@ -100,14 +100,13 @@ const setBackTimer = async () => {
         let strTime = totalMinute.toString();
         document.querySelector("#m1").value = strTime.length == 2 ? strTime.charAt(0) : "0";
         document.querySelector("#m2").value = strTime.length == 2 ? strTime.charAt(1) : strTime;
-
         oneMinInterval = setInterval(() => {
             oneMin = 60;
             --totalMinute;
-            if (totalMinute > 0) {
-                let strTime = totalMinute.toString();
-                document.querySelector("#m1").value = strTime.length == 2 ? strTime.charAt(0) : "0";
-                document.querySelector("#m2").value = strTime.length == 2 ? strTime.charAt(1) : strTime;
+            if (totalMinute >= 0) {
+                let strMin = totalMinute.toString();
+                document.querySelector("#m1").value = strMin.length == 2 ? strMin.charAt(0) : "0";
+                document.querySelector("#m2").value = strMin.length == 2 ? strMin.charAt(1) : strMin;
             }
         }, 60000)
 
@@ -120,10 +119,12 @@ const setBackTimer = async () => {
         }, 1000)
 
         setTimeout(() => {
-            clearInterval(oneMinInterval);
             clearInterval(interval);
+            clearInterval(oneMinInterval);
             document.querySelector("#s1").value = 0;
             document.querySelector("#s2").value = 0;
+            document.querySelector("#m1").value = 0;
+            document.querySelector("#m2").value = 0;
             window.alert("Timeout completed...!");
         }, timeOut)
 
